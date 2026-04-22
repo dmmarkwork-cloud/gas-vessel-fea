@@ -180,9 +180,9 @@ Convergence criterion: ≤ 2% change between successive meshes. Met between medi
 |:---:|:---:|
 | ![Coarse mesh](images/mesh_coarse.png) | ![Medium mesh](images/mesh_medium.png) |
 
-| Fine Mesh | Von Mises — Fine Mesh |
+| Fine Mesh |
 |:---:|:---:|
-| ![Fine mesh](images/mesh_fine.png) | ![Von Mises fine](images/von_mises_fine.png) |
+| ![Fine mesh](images/mesh_fine.png) |
 
 ---
 
