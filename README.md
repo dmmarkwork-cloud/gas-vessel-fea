@@ -79,24 +79,85 @@ Two hemisphere tip vertices — minimum constraint set to suppress all 6 rigid b
 
 ## Hand Calculations — Validation Baseline
 
-### Cylindrical Section
-| Quantity | Formula | Result |
-|---|---|---|
-| Hoop stress (σ_h) | pR/t | 159.25 MPa |
-| Axial stress (σ_a) | pR/2t | 79.63 MPa |
-| Von Mises (σ_VM) | √(σ_h² − σ_h·σ_a + σ_a²) | 137.91 MPa |
-| Safety factor | σ_y / σ_VM | **2.00** |
+### Thin-Walled Pressure Vessel Theory
+
+For a thin-walled cylindrical vessel with hemispherical ends under internal pressure p:
+
+**Hoop Stress (Cylinder):**
+```
+σ_h = pR / t
+```
+
+**Axial Stress (Cylinder):**
+```
+σ_a = pR / 2t
+```
+
+**Von Mises Equivalent Stress (Cylinder):**
+```
+σ_VM = √(σ_h² + σ_a² − σ_h·σ_a)
+```
+
+---
+
+### Cylinder Mid-Section
+
+**Given:**
+- p = 3.25 MPa
+- R = 147 mm (inner radius)
+- t = 3 mm (wall thickness)
+- R/t = 147/3 = 49 — thin-wall assumption valid (R/t > 10)
+
+**Hoop Stress:**
+```
+σ_h = (3.25 × 147) / 3 = 159.25 MPa
+```
+
+**Axial Stress:**
+```
+σ_a = (3.25 × 147) / (2 × 3) = 79.63 MPa
+```
+
+**Von Mises:**
+```
+σ_VM = √(159.25² + 79.63² − 159.25 × 79.63)
+σ_VM = √(25360.56 + 6340.94 − 12681.98)
+σ_VM = √19019.52
+σ_VM = 137.91 MPa
+```
+
+**Safety Factor:**
+```
+SF = σ_y / σ_VM = 276 / 137.91 = 2.00
+```
+
+---
 
 ### Hemispherical End Caps
-| Quantity | Formula | Result |
-|---|---|---|
-| Membrane stress (biaxial) | pR/2t | 79.63 MPa |
-| Von Mises | = σ_membrane | 79.63 MPa |
-| Safety factor | σ_y / σ_VM | **3.47** |
+
+For a hemisphere under internal pressure, stress is biaxial and equal in both directions:
+
+**Membrane Stress:**
+```
+σ_membrane = pR / 2t = (3.25 × 147) / (2 × 3) = 79.63 MPa
+```
+
+**Von Mises = σ_membrane (biaxial equal stress cancels cross term):**
+```
+σ_VM = 79.63 MPa
+```
+
+**Safety Factor:**
+```
+SF = 276 / 79.63 = 3.47
+```
 
 Caps are not the critical region. Hand calculations cannot predict junction stress — that requires FEA.
 
+---
+
 ### Radial Displacement
+
 | Quantity | Result | Limit (0.5% R) | Status |
 |---|---|---|---|
 | Max radial displacement | 0.402 mm | 0.750 mm | ✅ PASS (53.6% utilisation) |
@@ -105,11 +166,11 @@ Caps are not the critical region. Hand calculations cannot predict junction stre
 
 ## Mesh Convergence Study
 
-| Mesh | Max Size | Min Size | Nodes | Elements | Mid-cyl VM | Global Max | SF | Δ from prev |
-|---|---|---|---|---|---|---|---|---|
-| Coarse | 15 mm | 5 mm | 44,087 | 22,131 | 136.7 MPa | 148.7 MPa | 1.86 | baseline |
-| Medium | 8 mm | 3 mm | 147,792 | 74,232 | 142.1 MPa | 145.4 MPa | 1.90 | 2.22% |
-| Fine | 6 mm | 1 mm | 264,007 | 132,628 | 136.6 MPa | 144.5 MPa | **1.91** | **0.62%** ✅ |
+| Mesh | Max Size | Min Size | Edges | Curvature | Nodes | Elements | Mid-cyl VM | Hemi VM | Global Max | SF | Δ from prev |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| Coarse | 15 mm | 5 mm | 3 | 5 | 44,087 | 22,131 | 136.7 MPa | 78.47 MPa | 148.7 MPa | 1.86 | baseline |
+| Medium | 8 mm | 3 mm | 5 | 12 | 147,792 | 74,232 | 142.1 MPa | 77.27 MPa | 145.4 MPa | 1.90 | 2.22% |
+| Fine | 6 mm | 1 mm | 6 | 12 | 264,007 | 132,628 | 136.6 MPa | 77.82 MPa | 144.5 MPa | **1.91** | **0.62%** ✅ |
 
 Convergence criterion: ≤ 2% change between successive meshes. Met between medium and fine (0.62%). Fine mesh result governs all acceptance checks.
 
