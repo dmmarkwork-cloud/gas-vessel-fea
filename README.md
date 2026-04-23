@@ -1,4 +1,4 @@
-# Propellant Tank FEA — Structural Integrity Check
+# Gas Vessel FEA — Structural Integrity Check
 
 **Solver:** PrePoMax v2.5.1 dev / CalculiX | **Material:** Al 6061-T6 | **Element:** C3D10 (quadratic tetrahedral)
 
@@ -42,6 +42,12 @@ Does a cylindrical propellant tank with hemispherical end caps remain structural
 | Total vessel length | 700 mm |
 | R/t ratio | 49 (thin-wall valid, R/t > 10) |
 | Operating pressure | 3.25 MPa (32.5 bar) |
+
+### Geometry Image
+
+| Gas Vessel |
+|:---:|
+| ![Gas Vessel](images/gas-vessel-geometry-image.png) |
 
 **Pressure derivation:** Operating pressure was back-calculated from the SF = 2.0 criterion applied to von Mises stress in the cylindrical section:
 
