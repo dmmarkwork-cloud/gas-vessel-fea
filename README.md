@@ -187,7 +187,7 @@ Convergence criterion: ≤ 2% change between successive meshes. Met between medi
 | ![Coarse mesh](images/mesh_coarse.png) | ![Medium mesh](images/mesh_medium.png) |
 
 | Fine Mesh |
-|:---:|:---:|
+|:---:|
 | ![Fine mesh](images/mesh_fine.png) |
 
 ---
