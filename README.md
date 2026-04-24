@@ -240,11 +240,10 @@ gas-vessel-fea/
 │   ├── mesh_coarse.png     ← Coarse mesh view
 │   ├── mesh_medium.png     ← Medium mesh view
 │   ├── mesh_fine.png       ← Fine mesh view
-│   └── von_mises_fine.png  ← Von Mises contour, fine mesh
 ├── report/
 │   └── PressureVessel_FEA_Final_v2.pdf
 ├── cad/
-│   └── Pressure Vessel or Fuel Tank.SLDPRT
+│   └── gas-vessel-geometry.SLDPRT
 └── mesh/
     └── (PrePoMax .pmx model file)
 ```
