@@ -248,5 +248,5 @@ gas-vessel-fea/
 - **Hand calculations:** Thin-wall pressure vessel theory (Lamé, von Mises)
 
 ---
-📄 [View Full Report (PDF)](report/PressureVessel_FEA_Final.pdf)
+📄 [View Full Report (PDF)](https://raw.githubusercontent.com/dmmarkwork-cloud/gas-vessel-fea/main/report/PressureVessel_FEA_Final.pdf)
 *Prepared by Mark Lorenz Yamanaka — April 2026*
