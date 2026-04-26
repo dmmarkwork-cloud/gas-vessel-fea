@@ -91,19 +91,16 @@ Two hemisphere tip vertices — minimum constraint set to suppress all 6 rigid b
 For a thin-walled cylindrical vessel with hemispherical ends under internal pressure p:
 
 **Hoop Stress (Cylinder):**
-```
-σ_h = pR / t
-```
+
+$$\sigma_h = \frac{pR}{t}$$
 
 **Axial Stress (Cylinder):**
-```
-σ_a = pR / 2t
-```
+
+$$\sigma_h = \frac{pR}{t}$$
 
 **Von Mises Equivalent Stress (Cylinder):**
-```
-σ_VM = √(σ_h² + σ_a² − σ_h·σ_a)
-```
+
+$$\sigma_{VM} = \sqrt{\sigma_h^2 + \sigma_a^2 - \sigma_h \sigma_a}$$
 
 ---
 
@@ -116,27 +113,22 @@ For a thin-walled cylindrical vessel with hemispherical ends under internal pres
 - R/t = 147/3 = 49 — thin-wall assumption valid (R/t > 10)
 
 **Hoop Stress:**
-```
-σ_h = (3.25 × 147) / 3 = 159.25 MPa
-```
+
+$$\sigma_h = \frac{3.25 \times 147}{3} = 159.25 \text{ MPa}$$
 
 **Axial Stress:**
-```
-σ_a = (3.25 × 147) / (2 × 3) = 79.63 MPa
-```
+
+$$\sigma_a = \frac{3.25 \times 147}{2 \times 3} = 79.63 \text{ MPa}$$
 
 **Von Mises:**
-```
-σ_VM = √(159.25² + 79.63² − 159.25 × 79.63)
-σ_VM = √(25360.56 + 6340.94 − 12681.98)
-σ_VM = √19019.52
-σ_VM = 137.91 MPa
-```
+
+$$\sigma_{VM} = \sqrt{159.25^2 + 79.63^2 - 159.25 \times 79.63}$$
+
+$$= \sqrt{25360.56 + 6340.94 - 12681.98} = \sqrt{19019.52} = 137.91 \text{ MPa}$$
 
 **Safety Factor:**
-```
-SF = σ_y / σ_VM = 276 / 137.91 = 2.00
-```
+
+$$SF = \frac{\sigma_y}{\sigma_{VM}} = \frac{276}{137.91} = 2.00$$
 
 ---
 
@@ -145,19 +137,16 @@ SF = σ_y / σ_VM = 276 / 137.91 = 2.00
 For a hemisphere under internal pressure, stress is biaxial and equal in both directions:
 
 **Membrane Stress:**
-```
-σ_membrane = pR / 2t = (3.25 × 147) / (2 × 3) = 79.63 MPa
-```
+
+$$\sigma_{membrane} = \frac{pR}{2t} = \frac{3.25 \times 147}{2 \times 3} = 79.63 \text{ MPa}$$
 
 **Von Mises = σ_membrane (biaxial equal stress cancels cross term):**
-```
-σ_VM = 79.63 MPa
-```
+
+$$\sigma_{VM} = 79.63 \text{ MPa}$$
 
 **Safety Factor:**
-```
-SF = 276 / 79.63 = 3.47
-```
+
+$$SF = \frac{276}{79.63} = 3.47$$
 
 Caps are not the critical region. Hand calculations cannot predict junction stress — that requires FEA.
 
