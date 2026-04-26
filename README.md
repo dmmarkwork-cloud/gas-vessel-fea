@@ -51,13 +51,12 @@ Does a cylindrical propellant tank with hemispherical end caps remain structural
 
 **Pressure derivation:** Operating pressure was back-calculated from the SF = 2.0 criterion applied to von Mises stress in the cylindrical section:
 
-```
+
 $$\sigma_h = \frac{pR}{t}, \quad \sigma_a = \frac{pR}{2t}$$
 
 $$\sigma_{VM} = \sqrt{\sigma_h^2 - \sigma_h \sigma_a + \sigma_a^2} = \frac{\sigma_y}{SF}$$
 
 $$\therefore p = 3.25 \text{ MPa}$$
-```
 
 ---
 
