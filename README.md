@@ -66,7 +66,7 @@ $$\therefore p = 3.25 \text{ MPa}$$
 |---|---|
 | Young's modulus (E) | 68.9 GPa |
 | Poisson's ratio (ν) | 0.33 |
-| Yield strength (σ_y) | 276 MPa |
+| Yield strength ($$\sigma_y$$) | 276 MPa |
 | Unit system | mm, tonne, s, °C (stress in MPa) |
 
 ---
@@ -96,7 +96,7 @@ $$\sigma_h = \frac{pR}{t}$$
 
 **Axial Stress (Cylinder):**
 
-$$\sigma_h = \frac{pR}{t}$$
+$$\sigma_a = \frac{pR}{2t}$$
 
 **Von Mises Equivalent Stress (Cylinder):**
 
