@@ -26,7 +26,7 @@
 
 Does a cylindrical propellant tank with hemispherical end caps remain structurally safe under maximum operating pressure, with a safety factor of at least 2.0 against yield?
 
-**Acceptance criterion:** SF = σ_y / σ_VM ≥ 2.0 at all locations, evaluated at maximum operating pressure.  
+**Acceptance criterion:** $SF = \sigma_y / \sigma_{VM} \geq 2.0$ at all locations, evaluated at maximum operating pressure.  
 **Standard invoked:** None — self-defined academic criterion, intentionally documented for reproducibility.
 
 ---
