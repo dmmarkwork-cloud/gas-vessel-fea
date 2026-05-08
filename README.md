@@ -1,4 +1,4 @@
-# Gas Vessel FEA — Structural Integrity Check
+# Structural Verification of a Thin-Walled Propellant Tank Under Internal Pressurization
 
 **Solver:** PrePoMax v2.5.1 dev / CalculiX | **Material:** Al 6061-T6 | **Element:** C3D10 (quadratic tetrahedral)
 
