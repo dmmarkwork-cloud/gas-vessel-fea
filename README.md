@@ -156,7 +156,7 @@ Caps are not the critical region. Hand calculations cannot predict junction stre
 
 | Quantity | Result | Limit (0.5% R) | Status |
 |---|---|---|---|
-| Max radial displacement | 0.402 mm | 0.750 mm | ✅ PASS (53.6% utilisation) |
+| Max radial displacement | 0.402 mm | 0.750 mm | PASS (53.6% utilisation) |
 
 ---
 
@@ -166,7 +166,7 @@ Caps are not the critical region. Hand calculations cannot predict junction stre
 |---|---|---|---|---|---|---|---|---|---|---|---|
 | Coarse | 15 mm | 5 mm | 3 | 5 | 44,087 | 22,131 | 136.7 MPa | 78.47 MPa | 148.7 MPa | 1.86 | baseline |
 | Medium | 8 mm | 3 mm | 5 | 12 | 147,792 | 74,232 | 142.1 MPa | 77.27 MPa | 145.4 MPa | 1.90 | 2.22% |
-| Fine | 6 mm | 1 mm | 6 | 12 | 264,007 | 132,628 | 136.6 MPa | 77.82 MPa | 144.5 MPa | **1.91** | **0.62%** ✅ |
+| Fine | 6 mm | 1 mm | 6 | 12 | 264,007 | 132,628 | 136.6 MPa | 77.82 MPa | 144.5 MPa | **1.91** | **0.62%** |
 
 Convergence criterion: ≤ 2% change between successive meshes. Met between medium and fine (0.62%). Fine mesh result governs all acceptance checks.
 
@@ -186,8 +186,8 @@ Convergence criterion: ≤ 2% change between successive meshes. Met between medi
 
 | Location | Node | FEA | Hand Calc | Deviation | Status |
 |---|---|---|---|---|---|
-| Mid-cylinder | 109979 | 136.6 MPa | 137.91 MPa | −1.0% | ✅ |
-| Hemisphere body | 92924 | 77.82 MPa | 79.63 MPa | −2.3% | ✅ |
+| Mid-cylinder | 109979 | 136.6 MPa | 137.91 MPa | −1.0% |
+| Hemisphere body | 92924 | 77.82 MPa | 79.63 MPa | −2.3% |
 
 Both probes are in the free-body region, away from BC artefacts. Agreement within 5% tolerance confirms the solver is working correctly.
 
@@ -199,12 +199,12 @@ The global maximum (144.5 MPa) at the cylinder-to-hemisphere junction is a 3D ge
 
 | Assumption | Status | Notes |
 |---|---|---|
-| Static loading only | ✅ Justified | Proof-pressure check — not a fatigue or service-life check |
-| Linear elastic behaviour | ✅ Justified | All stresses remain below yield at SF ≥ 1.91 |
-| Uniform internal pressure | ✅ Justified | Standard for static structural integrity checks |
-| No weld seams / ports / fittings | ⚠️ Noted | Stress concentration sources in real hardware |
-| No fatigue assessment | ⚠️ Noted | Propellant tanks undergo repeated pressurisation cycles — single static event only |
-| Self-defined SF = 2.0 criterion | ✅ Documented | No external standard (ECSS, NASA, ASME) invoked |
+| Static loading only | Justified | Proof-pressure check — not a fatigue or service-life check |
+| Linear elastic behaviour | Justified | All stresses remain below yield at SF ≥ 1.91 |
+| Uniform internal pressure | Justified | Standard for static structural integrity checks |
+| No weld seams / ports / fittings | Noted | Stress concentration sources in real hardware |
+| No fatigue assessment | Noted | Propellant tanks undergo repeated pressurisation cycles — single static event only |
+| Self-defined SF = 2.0 criterion | Documented | No external standard (ECSS, NASA, ASME) invoked |
 
 ---
 
