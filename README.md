@@ -10,13 +10,13 @@
 
 | Criterion | Limit | Result | Verdict |
 |---|---|---|---|
-| Von Mises — mid-cylinder | ≤ 137.91 MPa | 136.6 MPa | ✅ PASS |
-| Von Mises — hemisphere body | ≤ 137.91 MPa | 77.82 MPa | ✅ PASS |
-| Von Mises — junction (global max) | ≤ 137.91 MPa | 144.5 MPa | ❌ FAIL |
-| Safety factor (SF ≥ 2.0) | ≥ 2.00 | 1.91 | ❌ FAIL |
-| Radial displacement | ≤ 0.75 mm | 0.402 mm | ✅ PASS |
-| Von Mises overshoot — junction vs limit | ≤ 5% | 4.8% | ✅ PASS |
-| Mesh convergence | ≤ 2% | 0.62% | ✅ PASS |
+| Von Mises — mid-cylinder | ≤ 137.91 MPa | 136.6 MPa | PASS |
+| Von Mises — hemisphere body | ≤ 137.91 MPa | 77.82 MPa | PASS |
+| Von Mises — junction (global max) | ≤ 137.91 MPa | 144.5 MPa | FAIL |
+| Safety factor (SF ≥ 2.0) | ≥ 2.00 | 1.91 | FAIL |
+| Radial displacement | ≤ 0.75 mm | 0.402 mm | PASS |
+| Von Mises overshoot — junction vs limit | ≤ 5% | 4.8% | PASS |
+| Mesh convergence | ≤ 2% | 0.62% | PASS |
 
 **Overall:** STRUCTURAL CRITERIA NOT FULLY MET — SF = 1.91 at cylinder-to-hemisphere junction (target: 2.00). Wall thickness increase from 3 mm → ~3.2 mm would meet criterion. The solver is validated and the mesh is converged; this is a design margin finding, not a yield failure.
 
