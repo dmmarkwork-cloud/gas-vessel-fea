@@ -27,7 +27,7 @@ Static linear FEA of a cylindrical propellant tank with hemispherical end caps u
 Does a cylindrical propellant tank with hemispherical end caps remain structurally safe under maximum operating pressure, with a safety factor of at least 2.0 against yield?
 
 **Acceptance criterion:** $SF = \sigma_y / \sigma_{VM} \geq 2.0$ at all locations, evaluated at maximum operating pressure.  
-**Standard invoked:** None — self-defined academic criterion, intentionally documented for reproducibility.
+**Standard invoked:** None. Self-defined academic criterion, intentionally documented for reproducibility.
 
 ---
 
@@ -73,7 +73,7 @@ $$\therefore p = 3.25 \text{ MPa}$$
 
 ## Boundary Conditions
 
-Two hemisphere tip vertices — minimum constraint set to suppress all 6 rigid body modes without adding stiffness to the vessel wall.
+Two hemisphere tip vertices; minimum constraint set to suppress all 6 rigid body modes without adding stiffness to the vessel wall.
 
 | BC | Location | Constraints |
 |---|---|---|
