@@ -2,7 +2,7 @@
 
 **Solver:** PrePoMax v2.5.1 dev / CalculiX | **Material:** Al 6061-T6 | **Element:** C3D10 (quadratic tetrahedral)
 
-> Static linear FEA of a cylindrical propellant tank with hemispherical end caps under internal pressure. Includes hand calculation validation, mesh convergence study, and documented boundary condition rationale.
+Static linear FEA of a cylindrical propellant tank with hemispherical end caps under internal pressure. Includes hand calculation validation, mesh convergence study, and documented boundary condition rationale.
 
 ---
 
