@@ -13,12 +13,12 @@ Static linear FEA of a cylindrical propellant tank with hemispherical end caps u
 | Von Mises — mid-cylinder | ≤ 137.91 MPa | 136.6 MPa | PASS |
 | Von Mises — hemisphere body | ≤ 137.91 MPa | 77.82 MPa | PASS |
 | Von Mises — junction (global max) | ≤ 137.91 MPa | 144.5 MPa | FAIL |
-| Safety factor (SF ≥ 2.0) | ≥ 2.00 | 1.91 | FAIL |
+| Safety factor (FoS ≥ 2.0) | ≥ 2.00 | 1.91 | FAIL |
 | Radial displacement | ≤ 0.75 mm | 0.402 mm | PASS |
 | Von Mises overshoot — junction vs limit | ≤ 5% | 4.8% | PASS |
 | Mesh convergence | ≤ 2% | 0.62% | PASS |
 
-**Overall:** STRUCTURAL CRITERIA NOT FULLY MET — SF = 1.91 at cylinder-to-hemisphere junction (target: 2.00). Wall thickness increase from 3 mm → ~3.2 mm would meet criterion. The solver is validated and the mesh is converged; this is a design margin finding, not a yield failure.
+**Overall:** STRUCTURAL CRITERIA NOT FULLY MET — FoS = 1.91 at cylinder-to-hemisphere junction (target: 2.00). Wall thickness increase from 3 mm → ~3.2 mm would meet criterion. The solver is validated and the mesh is converged; this is a design margin finding, not a yield failure.
 
 ---
 
@@ -26,7 +26,7 @@ Static linear FEA of a cylindrical propellant tank with hemispherical end caps u
 
 Does a cylindrical propellant tank with hemispherical end caps remain structurally safe under maximum operating pressure, with a safety factor of at least 2.0 against yield?
 
-**Acceptance criterion:** $SF = \sigma_y / \sigma_{VM} \geq 2.0$ at all locations, evaluated at maximum operating pressure.  
+**Acceptance criterion:** $FoS = \sigma_y / \sigma_{VM} \geq 2.0$ at all locations, evaluated at maximum operating pressure.  
 **Standard invoked:** None. Self-defined academic criterion, intentionally documented for reproducibility.
 
 ---
@@ -49,12 +49,12 @@ Does a cylindrical propellant tank with hemispherical end caps remain structural
 |:---:|
 | ![Gas Vessel](images/gas-vessel-geometry-image.png) |
 
-**Pressure derivation:** Operating pressure was back-calculated from the SF = 2.0 criterion applied to von Mises stress in the cylindrical section:
+**Pressure derivation:** Operating pressure was back-calculated from the FoS = 2.0 criterion applied to von Mises stress in the cylindrical section:
 
 
 $$\sigma_h = \frac{pR}{t}, \quad \sigma_a = \frac{pR}{2t}$$
 
-$$\sigma_{VM} = \sqrt{\sigma_h^2 - \sigma_h \sigma_a + \sigma_a^2} = \frac{\sigma_y}{SF}$$
+$$\sigma_{VM} = \sqrt{\sigma_h^2 - \sigma_h \sigma_a + \sigma_a^2} = \frac{\sigma_y}{FoS}$$
 
 $$\therefore p = 3.25 \text{ MPa}$$
 
@@ -128,7 +128,7 @@ $$= \sqrt{25360.56 + 6340.94 - 12681.98} = \sqrt{19019.52} = 137.91 \text{ MPa}$
 
 **Safety Factor:**
 
-$$SF = \frac{\sigma_y}{\sigma_{VM}} = \frac{276}{137.91} = 2.00$$
+$$FoS = \frac{\sigma_y}{\sigma_{VM}} = \frac{276}{137.91} = 2.00$$
 
 ---
 
@@ -146,7 +146,7 @@ $$\sigma_{VM} = 79.63 \text{ MPa}$$
 
 **Safety Factor:**
 
-$$SF = \frac{276}{79.63} = 3.47$$
+$$FoS = \frac{276}{79.63} = 3.47$$
 
 Caps are not the critical region. Hand calculations cannot predict junction stress — that requires FEA.
 
@@ -162,7 +162,7 @@ Caps are not the critical region. Hand calculations cannot predict junction stre
 
 ## Mesh Convergence Study
 
-| Mesh | Max Size | Min Size | Edges | Curvature | Nodes | Elements | Mid-cyl VM | Hemi VM | Global Max | SF | Δ from prev |
+| Mesh | Max Size | Min Size | Edges | Curvature | Nodes | Elements | Mid-cyl VM | Hemi VM | Global Max | FoS | Δ from prev |
 |---|---|---|---|---|---|---|---|---|---|---|---|
 | Coarse | 15 mm | 5 mm | 3 | 5 | 44,087 | 22,131 | 136.7 MPa | 78.47 MPa | 148.7 MPa | 1.86 | baseline |
 | Medium | 8 mm | 3 mm | 5 | 12 | 147,792 | 74,232 | 142.1 MPa | 77.27 MPa | 145.4 MPa | 1.90 | 2.22% |
@@ -200,11 +200,11 @@ The global maximum (144.5 MPa) at the cylinder-to-hemisphere junction is a 3D ge
 | Assumption | Status | Notes |
 |---|---|---|
 | Static loading only | Justified | Proof-pressure check — not a fatigue or service-life check |
-| Linear elastic behaviour | Justified | All stresses remain below yield at SF ≥ 1.91 |
+| Linear elastic behaviour | Justified | All stresses remain below yield at FoS ≥ 1.91 |
 | Uniform internal pressure | Justified | Standard for static structural integrity checks |
 | No weld seams / ports / fittings | Noted | Stress concentration sources in real hardware |
 | No fatigue assessment | Noted | Propellant tanks undergo repeated pressurisation cycles — single static event only |
-| Self-defined SF = 2.0 criterion | Documented | No external standard (ECSS, NASA, ASME) invoked |
+| Self-defined FoS = 2.0 criterion | Documented | No external standard (ECSS, NASA, ASME) invoked |
 
 ---
 
